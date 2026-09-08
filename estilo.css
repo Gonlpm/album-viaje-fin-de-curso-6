@@ -1,1 +1,168 @@
+* {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+}
+
+/* CABECERA */
+
+header {
+    text-align: center;
+    background: white;
+    padding: 35px 20px 25px;
+}
+
+.emoji {
+    font-size: 50px;
+}
+
+h1 {
+    margin: 10px 0 5px;
+    font-size: 32px;
+}
+
+header p {
+    margin: 0 0 20px;
+    color: #666;
+}
+
+.informacion {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #555;
+    flex-wrap: wrap;
+}
+
+
+/* GALERÍA */
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.galeria img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/* VISOR */
+
+.visor {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.visor.activo {
+    display: flex;
+}
+
+#fotoGrande {
+    max-width: 90%;
+    max-height: 85%;
+    object-fit: contain;
+}
+
+.cerrar,
+.flecha {
+    position: absolute;
+    border: none;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.cerrar {
+    top: 20px;
+    right: 20px;
+    font-size: 35px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.flecha {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    width: 50px;
+    height: 70px;
+    border-radius: 10px;
+}
+
+.izquierda {
+    left: 15px;
+}
+
+.derecha {
+    right: 15px;
+}
+
+.contador {
+    position: absolute;
+    bottom: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+
+/* PIE */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 600px) {
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 7px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .flecha {
+        width: 40px;
+        height: 55px;
+        font-size: 40px;
+    }
+
+    .izquierda {
+        left: 5px;
+    }
+
+    .derecha {
+        right: 5px;
+    }
+}
